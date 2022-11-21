@@ -6,7 +6,7 @@
 /*   By: rerayyad <rerayyad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 12:29:42 by rerayyad          #+#    #+#             */
-/*   Updated: 2022/11/20 16:34:11 by rerayyad         ###   ########.fr       */
+/*   Updated: 2022/11/21 15:08:21 by rerayyad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,44 +50,49 @@ int	ft_printf(const char *format, ...)
 	while (format[i])
 	{
 		if (format[i] == '%' && ft_strchr("cspdiuxX%", format[i + 1]))
-		{
-			i++;
-			if (!format[i])
-				return (l);
-			l += ft_printer(format[i], arg);
-		}
-		else
+			l += ft_printer(format[++i], arg);
+		else if (format[i] != '%')
 			ft_putchar(format[i], &l);
-			i++;
+		i++;
 	}
 	va_end(arg);
 	return (l);
 }
-#include<limits.h>
-#include<stdio.h>
-#include <fcntl.h>
+// #include<limits.h>
+// #include<stdio.h>
+// #include <fcntl.h>
 
-int main()
-{
-// char b[5] = "hello";
-//void *ptr;
+// int main()
+// {
+// // char b[5] = "hello";
+// //void *ptr;
 
-// ft_printf("%c \n%s",'c', "test", 100, 10);
-//ft_printf("\ntest\n");
-//unsigned long i = (unsigned long)(-1);
-//printf("%lu\n", i);
-// int fd = open("txt", O_RDWR);
-// for(int i = 0; i < 9000; i++	)
-// 	write(fd, "%", 1);
-// close(fd);
-// fd = open("txt", O_RDONLY);
-// char buff[10000];
-// read(fd, buff, 9000);
-// buff[8999] = 'd';
-// buff[9000] = '\0';
-ft_printf("\n: %d", ft_printf("%%%"));
-printf("\n");
-printf("\n: %d", printf("%%%"));
-printf("\n");
-//printf("\n%X", -1000);
-}
+// // ft_printf("%c \n%s",'c', "test", 100, 10);
+// //ft_printf("\ntest\n");
+// //unsigned long i = (unsigned long)(-1);
+// //printf("%lu\n", i);
+// // int fd = open("txt", O_RDWR);
+// // for(int i = 0; i < 9000; i++	)
+// // 	write(fd, "%", 1);
+// // close(fd);
+// // fd = open("txt", O_RDONLY);
+// // char buff[10000];
+// // read(fd, buff, 9000);
+// // buff[8999] = 'd';
+// // buff[9000] = '\0';
+// // size_t z = (size_t)0;
+// // char *buff = malloc(z + 1);
+// // for(size_t i = 0; i < z; i++)
+// // 	buff[i] = '0';
+// //buff[z] = '\0';
+// char buff[2];
+// buff[0] = 96;
+// buff[1] ='\0';
+// #define TEST "%d"
+// #define STR "0"
+// ft_printf("\n: %d", ft_printf(TEST,*((int *)(&buff[0]))));
+// printf("\n");
+// printf("\n: %d", printf(TEST, *((int *)(&buff[0]))));
+// printf("\n");
+// //printf("\n%X", -1000);
+// }

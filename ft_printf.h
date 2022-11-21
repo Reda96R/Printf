@@ -6,7 +6,7 @@
 /*   By: rerayyad <rerayyad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 14:01:39 by rerayyad          #+#    #+#             */
-/*   Updated: 2022/11/20 14:55:24 by rerayyad         ###   ########.fr       */
+/*   Updated: 2022/11/21 15:17:41 by rerayyad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <unistd.h>
 # include <stdarg.h>
 # include <stdlib.h>
-#include<string.h>
 
 int		ft_printf(const char *format, ...);
 void	ft_putchar(char c, int *l);
@@ -26,7 +25,6 @@ void	ft_putnbr(int n, int *l);
 int		ft_strlen(char *str);
 int		ft_getlen(long n);
 void	ft_adress(unsigned long long n, int *l);
-int     ft_strchr(const char *s, int c);
-
+int		ft_strchr(const char *s, int c);
 
 #endif
